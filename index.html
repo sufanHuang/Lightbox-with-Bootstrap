@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        *{
+            font-family: 'Lato';
+            background-color: darkolivegreen
+         }
+
+        #profile-grid { overflow: auto; white-space: normal; }
+        #profile-grid .profile { padding-bottom: 40px; }
+        #profile-grid .panel { padding: 0 }
+        #profile-grid .panel-body { padding: 15px }
+        #profile-grid .profile-name { font-weight: bold; }
+        #profile-grid .thumbnail {margin-bottom:6px;}
+        #profile-grid .panel-thumbnail { overflow: hidden; }
+        #profile-grid .img-rounded { border-radius: 4px 4px 0 0;}
+    </style>
+  </head>
+<body>
+  
+		<div class="container">
+          
+			<div class="content text-center">
+				<div class="heading">
+					<h2>Family Vocabulary Using Bootstrap Lightbox</h2>
+					<hr>
+				</div>
+			</div>
+				
+			<div class="container-fluid">
+				<div class="row" id="profile-grid">
+				
+					<div class="col-sm-4 col-xs-12 profile">
+				        <div class="panel panel-default">
+				          <div class="panel-thumbnail">
+				          	<a href="#" title="image 1" class="thumb">
+				          		<img src="image1.jpg" class="img-responsive img-rounded" data-toggle="modal" data-target=".modal-profile-lg">                               
+				          	</a>
+				          </div>
+				        </div>
+				    </div>
+                    
+                    <div class="col-sm-4 col-xs-12 profile">
+				        <div class="panel panel-default">
+				          <div class="panel-thumbnail">
+				          	<a href="#" title="image 2" class="thumb">
+				          		<img src="image2.jpg" class="img-responsive img-rounded" data-toggle="modal" data-target=".modal-profile-lg">
+				          	</a>
+				          </div>
+				        </div>
+				    </div>
+                    
+                    <div class="col-sm-4 col-xs-12 profile">
+				        <div class="panel panel-default">
+				          <div class="panel-thumbnail">
+				          	<a href="#" title="image 3" class="thumb">
+				          		<img src="image3.jpg" class="img-responsive img-rounded" data-toggle="modal" data-target=".modal-profile-lg">
+				          	</a>
+				          </div>
+				        </div>
+				    </div>
+                    
+                    <div class="col-sm-4 col-xs-12 profile">
+				        <div class="panel panel-default">
+				          <div class="panel-thumbnail">
+				          	<a href="#" title="image 4" class="thumb">
+				          		<img src="image4.jpg" class="img-responsive img-rounded" data-toggle="modal" data-target=".modal-profile-lg">
+				          	</a>
+				          </div>
+				        </div>
+				    </div>
+                    
+                    <div class="col-sm-4 col-xs-12 profile">
+				        <div class="panel panel-default">
+				          <div class="panel-thumbnail">
+				          	<a href="#" title="image 5" class="thumb">
+				          		<img src="image5.jpg" class="img-responsive img-rounded" data-toggle="modal" data-target=".modal-profile-lg">
+				          	</a>
+				          </div>
+				        </div>
+				    </div>
+                    
+                    <div class="col-sm-4 col-xs-12 profile">
+				        <div class="panel panel-default">
+				          <div class="panel-thumbnail">
+				          	<a href="#" title="image 6" class="thumb">
+				          		<img src="image6.jpg" class="img-responsive img-rounded" data-toggle="modal" data-target=".modal-profile-lg">
+				          	</a>
+				          </div>
+				        </div>
+				    </div>
+                    
+   				 </div>
+			</div>
+		</div>
+    
+    <div class="modal fade modal-profile" tabindex="-1" role="dialog" aria-labelledby="modalProfile" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" type="button" data-dismiss="modal">×</button>
+                    <h3 class="modal-title"></h3>
+                </div>
+                
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            $('a.thumb').click(function(event){
+    	           event.preventDefault();
+    	       var content = $('.modal-body');
+    	           content.empty();
+      	     var title = $(this).attr("title");
+      	     $('.modal-title').html(title);      	
+                content.html($(this).html());
+      	     $(".modal-profile").modal({show:true});
+            });
+            
+            $('.img-responsive img-rounded').click(function(){
+                   $("#audio_play").play();
+            })
+        });
+    </script> 
+</body>
+        
